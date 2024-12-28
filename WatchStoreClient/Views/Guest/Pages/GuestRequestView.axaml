@@ -1,0 +1,70 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="WatchStoreClient.Views.Guest.Pages.GuestRequestView"
+             x:DataType="pages:GuestRequestViewModel"
+             xmlns:pages="clr-namespace:WatchStoreClient.ViewModels.Guest.Pages">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Добро пожаловать в наш Магазин Часов!"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+       <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0,0,0,10">
+            <StackPanel Spacing="15">
+                <TextBlock Text="Мы рады приветствовать каждого из Вас и рассказать немного о нашем сервисе!" 
+                           FontSize="20" 
+                           FontWeight="SemiBold" 
+                           TextWrapping="Wrap" />
+
+                <TextBlock Text="Наша основная цель – помочь Вам заполучить заветную модель часов, которую сложно найти в обычных магазинах. Мы тщательно подходим к каждому запросу, гарантируя: "
+                           FontSize="18" 
+                           TextWrapping="Wrap"
+                           Margin="0,10,0,0"/>
+
+                <StackPanel Margin="15,0,0,0">
+                    <TextBlock Text="• Поиск моделей на заказ по вашим запросам;" FontSize="16" TextWrapping="Wrap"/>
+                    <TextBlock Text="• Расчет лучшей стоимости и удобных условий доставки;" FontSize="16" TextWrapping="Wrap"/>
+                    <TextBlock Text="• Гарантированно оригинальную продукцию;" FontSize="16" TextWrapping="Wrap"/>
+                    <TextBlock Text="• Высокое качество обслуживания." FontSize="16" TextWrapping="Wrap"/>
+                </StackPanel>
+
+                <TextBlock Text="Наши сотрудники – это профессионалы, которые сотрудничают с друзьями и партнерами из Европы и Азии, чтобы находить самые лучшие предложения, доступные на рынке."
+                           FontSize="18"
+                           TextWrapping="Wrap"
+                           Margin="0,15,0,0"/>
+
+                <TextBlock Text="Как работает наш сервис?"
+                           FontSize="20" 
+                           FontWeight="SemiBold"
+                           Margin="0,15,0,5" />
+
+                <StackPanel Margin="15,0,0,0">
+                    <TextBlock Text="1. Вы регистрируетесь на нашей платформе и оставляете заявку на поиск интересующей модели часов." 
+                               FontSize="16" 
+                               TextWrapping="Wrap" />
+                    <TextBlock Text="2. Мы изучаем заявку, находим часы и подбираем лучшее предложение." 
+                               FontSize="16"
+                               TextWrapping="Wrap" 
+                               Margin="0,5,0,0"/>
+                    <TextBlock Text="3. После этого мы сообщаем вам цену, условия доставки и другую нужную информацию." 
+                               FontSize="16" 
+                               TextWrapping="Wrap" 
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+
+                <TextBlock Text="Чтобы оставить заявку: зарегистрируйтесь или войдите в аккаунт, и мы начнём!" 
+                           FontSize="18" 
+                           FontWeight="SemiBold" 
+                           Margin="0,15,0,0" 
+                           TextWrapping="Wrap" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

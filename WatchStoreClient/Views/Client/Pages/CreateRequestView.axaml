@@ -1,0 +1,77 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="WatchStoreClient.Views.Client.Pages.CreateRequestView"
+    x:DataType="pages:CreateRequestViewModel"
+    xmlns:pages="clr-namespace:WatchStoreClient.ViewModels.Client.Pages">
+    <Border BorderBrush="#0d1040"
+        BorderThickness="2"
+        CornerRadius="10"
+        Padding="20"
+        Margin="10">
+        <StackPanel Spacing="15">
+            <TextBlock
+                Text="Наша основная цель – помочь Вам заполучить заветную модель часов, которую сложно найти в обычных магазинах. Мы тщательно подходим к каждому запросу, гарантируя: "
+                FontSize="15"
+                TextWrapping="Wrap"
+                Margin="0,10,0,0" />
+
+            <StackPanel Margin="15,0,0,0">
+                <TextBlock Text="• Поиск моделей на заказ по вашим запросам;" FontSize="12"
+                    TextWrapping="Wrap" />
+                <TextBlock Text="• Расчет лучшей стоимости и удобных условий доставки;"
+                    FontSize="12" TextWrapping="Wrap" />
+                <TextBlock Text="• Гарантированно оригинальную продукцию;" FontSize="12"
+                    TextWrapping="Wrap" />
+                <TextBlock Text="• Высокое качество обслуживания." FontSize="12" TextWrapping="Wrap" />
+            </StackPanel>
+            <TextBlock Text="Создание новой заявки"
+                FontSize="20"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                Foreground="#0d1040" />
+
+            <TextBox Width="350"
+                Watermark="Описание заявки..."
+                Text="{Binding Description}"
+                Height="40"
+                Classes="search"
+                VerticalAlignment="Center" />
+
+            <TextBox Width="350"
+                Watermark="Тип заявки..."
+                Text="{Binding RequestType}"
+                Height="40"
+                Classes="search"
+                VerticalAlignment="Center" />
+
+            <TextBox Width="350"
+                Watermark="Модель часов (если требуется)"
+                Text="{Binding TargetWatchName}"
+                Height="40"
+                Classes="search"
+                VerticalAlignment="Center" />
+
+            <TextBox Width="350"
+                Watermark="Бренд часов (если требуется)"
+                Text="{Binding TargetBrand}"
+                Height="40"
+                Classes="search"
+                VerticalAlignment="Center" />
+
+            <TextBox Width="350"
+                Watermark="Ценовой диапазон (если требуется)"
+                Text="{Binding TargetPriceRange}"
+                Height="40"
+                Classes="search"
+                VerticalAlignment="Center" />
+
+            <Button Classes="pagesbnt"
+                Content="Создать заявку"
+                Command="{Binding CreateRequestCommand}"
+                Width="200"
+                Height="40"
+                HorizontalAlignment="Center"
+                Margin="10" />
+        </StackPanel>
+    </Border>
+</UserControl>

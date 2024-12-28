@@ -1,0 +1,84 @@
+<Window xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:WatchStoreClient.ViewModels.Client"
+    xmlns:pages="clr-namespace:WatchStoreClient.ViewModels.Client.Pages"
+    xmlns:views="clr-namespace:WatchStoreClient.Views.Client.Pages"
+    x:Class="WatchStoreClient.Views.Client.ClientWindow"
+    x:DataType="vm:ClientWindowViewModel"
+    Width="1000" Height="800"
+    WindowStartupLocation="CenterScreen"
+    Title="Окно клиента">
+
+    <Window.DataTemplates>
+        <DataTemplate DataType="{x:Type pages:ClientWatchesViewModel}">
+            <views:ClientWatchesView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type pages:ClientOrdersViewModel}">
+            <views:ClientOrdersView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type pages:CreateRequestViewModel}">
+            <views:CreateRequestView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type pages:ClientRequestsViewModel}">
+            <views:ClientRequestsView />
+        </DataTemplate>
+    </Window.DataTemplates>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Background="#EEE" Spacing="10" VerticalAlignment="Stretch">
+           
+            <TextBlock Text="WatchStore" FontSize="20" FontWeight="Bold" Foreground="#0d1040"
+                HorizontalAlignment="Center" Margin="0,20,0,10" />
+
+            <Button Command="{Binding ShowWatchesCommand}" Classes="menu-button">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="avares://WatchStoreClient/Assets/watch-icon.png" Width="20"
+                        Height="20" Margin="0,0,5,0" />
+                    <TextBlock Text="Товары" />
+                </StackPanel>
+            </Button>
+
+            <Button Command="{Binding ShowOrdersCommand}" Classes="menu-button">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="avares://WatchStoreClient/Assets/order-icon.png" Width="20"
+                        Height="20" Margin="0,0,5,0" />
+                    <TextBlock Text="Мои заказы" />
+                </StackPanel>
+            </Button>
+
+            <Button Command="{Binding ShowCreateRequestCommand}" Classes="menu-button">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="avares://WatchStoreClient/Assets/request-icon.png"
+                        Width="20"
+                        Height="20" Margin="0,0,5,0" />
+                    <TextBlock Text="Создать заявку" />
+                </StackPanel>
+            </Button>
+
+            <Button Command="{Binding ShowRequestsCommand}" Classes="menu-button">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="avares://WatchStoreClient/Assets/create-request-icon.png" Width="20"
+                        Height="20" Margin="0,0,5,0" />
+                    <TextBlock Text="Мои заявки" />
+                </StackPanel>
+            </Button>
+
+            <Button Command="{Binding LogoutCommand}" Classes="menu-button"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom" Margin="0,20">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="avares://WatchStoreClient/Assets/exit-icon.png" Width="20"
+                        Height="20" Margin="0,0,5,0" />
+                    <TextBlock Text="Выход" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <ContentControl Grid.Column="1" Content="{Binding CurrentView}" />
+    </Grid>
+</Window>

@@ -1,0 +1,85 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:WatchStoreClient.ViewModels.Admin.Pages"
+             x:Class="WatchStoreClient.Views.Admin.Pages.AdminEmployeesView"
+             x:DataType="vm:AdminEmployeesViewModel">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center" Margin="10">
+            <Button Content="Добавить сотрудника"
+                    Width="250"
+                    Height="35"
+                    Classes="pagesbnt"
+                    HorizontalAlignment="Center"
+                    Click="OnAddEmployeeClick" />
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="10">
+            <ItemsControl ItemsSource="{Binding Employees}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="#0d1040"
+                                BorderThickness="2"
+                                Margin="10"
+                                CornerRadius="10"
+                                Padding="10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0" Spacing="5">
+                                    <TextBlock Text="{Binding UserInfo.Name}"
+                                               FontWeight="Bold"
+                                               FontSize="18"
+                                               Foreground="#0d1040" />
+
+                                    <TextBlock Text="Электронная почта:"
+                                               FontWeight="Bold"
+                                               FontSize="14"
+                                               Foreground="Gray" />
+                                    <TextBlock Text="{Binding UserInfo.Email}"
+                                               FontSize="14" />
+
+                                    <TextBlock Text="Телефон:"
+                                               FontWeight="Bold"
+                                               FontSize="14"
+                                               Foreground="Gray" />
+                                    <TextBlock Text="{Binding UserInfo.Phone}"
+                                               FontSize="14" />
+
+                                    <TextBlock Text="Позиция:"
+                                               FontWeight="Bold"
+                                               FontSize="14"
+                                               Foreground="Gray" />
+                                    <TextBlock Text="{Binding Position}"
+                                               FontSize="14" />
+
+                                    <TextBlock Text="{Binding HireDate, StringFormat='Дата найма: {0:d}'}"
+                                               FontWeight="Medium"
+                                               FontSize="14"
+                                               Foreground="#0d1040" />
+                                </StackPanel>
+
+                                <Button Content="Удалить"
+                                        Classes="small-btn"
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Width="90"
+                                        Height="25"
+                                        CommandParameter="{Binding Id}"
+                                        Click="OnDeleteClick" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

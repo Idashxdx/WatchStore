@@ -1,0 +1,95 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="WatchStoreClient.Views.Employee.Pages.EmployeeWatchesView"
+    x:DataType="pages:EmployeeWatchesViewModel"
+    xmlns:pages="clr-namespace:WatchStoreClient.ViewModels.Employee.Pages">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center" Margin="10">
+            <TextBox Width="250"
+                Watermark="Поиск по названию..."
+                Text="{Binding FilterText, Mode=TwoWay}"
+                Classes="search"
+                VerticalAlignment="Center"
+                Height="35" />
+            <Button Content="Добавить товар"
+                Width="165"
+                Height="35"
+                HorizontalAlignment="Center"
+                Classes="pagesbnt"
+                Click="OnAddWatchButtonClick" />
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="10">
+            <ItemsControl ItemsSource="{Binding Watches}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="#0d1040"
+                            BorderThickness="2"
+                            Margin="10"
+                            CornerRadius="10"
+                            Padding="10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding ImagePreview}"
+                                    Width="150"
+                                    Height="150"
+                                    Stretch="Uniform"
+                                    Grid.Column="0" />
+                                <StackPanel Grid.Column="1" Margin="10,0,0,0" Spacing="5">
+                                    <TextBlock Text="{Binding ModelName}"
+                                        FontWeight="Bold"
+                                        FontSize="18"
+                                        Margin="0,0,0,8"
+                                        Foreground="#0d1040" />
+
+                                    <TextBlock Text="{Binding Brand}"
+                                        FontStyle="Italic"
+                                        FontSize="16"
+                                        Foreground="Gray" />
+
+                                    <TextBlock FontSize="16">
+                                        <Run Text="Количество: "
+                                            Foreground="#0d1040"
+                                            FontWeight="Bold" />
+                                        <Run Text="{Binding Quantity}" />
+                                    </TextBlock>
+                                    <TextBlock FontSize="16">
+                                        <Run Text="Цена: "
+                                            Foreground="#0d1040"
+                                            FontWeight="Bold" />
+                                        <Run Text="{Binding Price, StringFormat='{}{0:C}'}" />
+                                    </TextBlock>
+
+                                    <Button Content="Добавить изображение"
+                                        Classes="pagesbnt"
+                                        FontSize="12"
+                                        Height="30"
+                                        Width="170"
+                                        CommandParameter="{Binding WatchId}"
+                                        Click="OnAddImageClick" />
+                                </StackPanel>
+
+                                <Button Content="Удалить"
+                                    Classes="small-btn"
+                                    Height="25"
+                                    Width="90"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Top"
+                                    CommandParameter="{Binding WatchId}"
+                                    Click="OnDeleteClick"
+                                    Grid.ColumnSpan="2" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

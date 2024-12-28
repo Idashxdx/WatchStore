@@ -1,0 +1,72 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="WatchStoreClient.Views.Client.Pages.ClientOrdersView"
+    x:DataType="pages:ClientOrdersViewModel"
+    xmlns:pages="clr-namespace:WatchStoreClient.ViewModels.Client.Pages">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+            Text="{Binding ErrorMessage}"
+            Foreground="Red"
+            TextWrapping="Wrap"
+            Margin="10" />
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="10">
+            <ItemsControl ItemsSource="{Binding Orders}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="#0d1040"
+                            BorderThickness="2"
+                            CornerRadius="10"
+                            Margin="10"
+                            Padding="10">
+                            <StackPanel Orientation="Horizontal" Spacing="15">
+                                <StackPanel Orientation="Vertical" MinWidth="200">
+                                    <TextBlock Text="{Binding ModelName}"
+                                        FontSize="18"
+                                        FontWeight="Bold"
+                                        Foreground="#0d1040"
+                                        Margin="0,0,0,5" />
+
+                                    <TextBlock Text="{Binding Brand}"
+                                        FontSize="16"
+                                        FontStyle="Italic"
+                                        Foreground="Gray"
+                                        Margin="0,0,0,5" />
+
+                                    <TextBlock>
+                                        <Run Text="Количество: " FontWeight="Bold" Foreground="Gray" />
+                                        <Run Text="{Binding Quantity}" />
+                                    </TextBlock>
+
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" MinWidth="200">
+                                    <TextBlock>
+                                        <Run Text="Дата заказа: " FontWeight="Bold"
+                                            Foreground="Gray" />
+                                        <Run Text="{Binding OrderDate, StringFormat=dd.MM.yyyy}" />
+                                    </TextBlock>
+
+                                    <TextBlock>
+                                        <Run Text="Статус: " FontWeight="Bold" Foreground="Gray" />
+                                        <Run Text="{Binding Status}" />
+                                    </TextBlock>
+
+                                    <TextBlock TextWrapping="Wrap">
+                                        <Run Text="Адрес доставки: " FontWeight="Bold"
+                                            Foreground="Gray" />
+                                        <Run Text="{Binding DeliveryAddress}" />
+                                    </TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

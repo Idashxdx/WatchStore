@@ -1,0 +1,95 @@
+is_global = true
+build_property.AvaloniaNameGeneratorIsEnabled = true
+build_property.AvaloniaNameGeneratorBehavior = InitializeComponent
+build_property.AvaloniaNameGeneratorDefaultFieldModifier = internal
+build_property.AvaloniaNameGeneratorFilterByPath = *
+build_property.AvaloniaNameGeneratorFilterByNamespace = *
+build_property.AvaloniaNameGeneratorViewFileNamingStrategy = NamespaceAndClassName
+build_property.AvaloniaNameGeneratorAttachDevTools = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WatchStoreClient
+build_property.ProjectDir = /home/aida/WatchStore/WatchStoreClient/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[/home/aida/WatchStore/WatchStoreClient/App.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Admin/AdminWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Admin/Pages/AddEmployeeWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Admin/Pages/AdminBackupsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Admin/Pages/AdminEmployeesView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Client/ClientWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Client/Pages/ClientOrdersView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Client/Pages/ClientRequestsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Client/Pages/ClientWatchesView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Client/Pages/CreateRequestView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Client/Pages/OrderWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Employee/EmployeeWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Employee/Pages/AddWatchImageWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Employee/Pages/AddWatchWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Employee/Pages/ArchivedOrdersView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Employee/Pages/ArchivedRequestsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Employee/Pages/EmployeeClientsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Employee/Pages/EmployeeOrdersView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Employee/Pages/EmployeeRequestsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Employee/Pages/EmployeeWatchesView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Guest/GuestWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Guest/Pages/GuestRequestView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/Guest/Pages/GuestWatchesView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/aida/WatchStore/WatchStoreClient/Views/RegisterWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

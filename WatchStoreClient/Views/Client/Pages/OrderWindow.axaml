@@ -1,0 +1,56 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:WatchStoreClient.ViewModels.Client.Pages"
+        x:Class="WatchStoreClient.Views.Client.OrderWindow"
+        x:DataType="vm:OrderWindowViewModel"
+        Title="Оформление заказа"
+        Width="400" Height="400"
+        WindowStartupLocation="CenterScreen"
+        Background="#d2d3d6">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="15">
+            
+            <TextBlock Text="Оформление заказа" 
+                       FontSize="18" 
+                       FontWeight="Bold" 
+                       Foreground="#0d1040"
+                       HorizontalAlignment="Center" />
+
+            <TextBlock Text="{Binding SelectedWatch.ModelName}" 
+                       FontSize="16" 
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="Center"
+                       Foreground="#0d1040" />
+
+            <TextBox Watermark="Количество"
+                     Width="250"
+                     Height="35"
+                     Text="{Binding Quantity, Mode=TwoWay}"
+                     Classes="input" />
+
+            <TextBox Watermark="Адрес доставки" 
+                     Width="250" 
+                     Height="35"
+                     Text="{Binding DeliveryAddress, Mode=TwoWay}"
+                     Classes="input" />
+
+            <TextBlock Text="{Binding StatusMessage}" 
+                       Foreground="Red" 
+                       FontSize="14" 
+                       HorizontalAlignment="Center"
+                       TextWrapping="Wrap" />
+
+            <Button Content="Оформить заказ" 
+                    HorizontalAlignment="Center" 
+                    Classes="pagesbnt"
+                    Command="{Binding ConfirmOrderCommand}" />
+
+            <Button Content="Отмена"
+                    HorizontalAlignment="Center" 
+                    Width="250"
+                    Classes="pagesbnt"
+                    Click="CloseOrderWindow" />
+        </StackPanel>
+    </Grid>
+</Window>

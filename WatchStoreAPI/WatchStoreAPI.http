@@ -1,0 +1,6 @@
+@WatchStoreAPI_HostAddress = http://localhost:5148
+
+GET {{WatchStoreAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

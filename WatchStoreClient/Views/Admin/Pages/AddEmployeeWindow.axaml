@@ -1,0 +1,65 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:WatchStoreClient.ViewModels.Admin.Pages"
+        x:Class="WatchStoreClient.Views.Admin.Pages.AddEmployeeWindow"
+        x:DataType="vm:AddEmployeeWindowViewModel"
+        Title="Добавить сотрудника"
+        Width="500" Height="600"
+        WindowStartupLocation="CenterScreen"
+        Background="#d2d3d6">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Spacing="5">
+
+            <TextBlock Text="Добавление нового сотрудника"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Foreground="#0d1040"
+                       HorizontalAlignment="Center" />
+
+            <TextBox Watermark="Имя"
+                     Width="250"
+                     Height="35"
+                     Text="{Binding Name, Mode=TwoWay}"
+                     Classes="input" />
+
+            <TextBox Watermark="Электронная почта"
+                     Width="250"
+                     Height="35"
+                     Text="{Binding Email, Mode=TwoWay}"
+                     Classes="input" />
+
+            <TextBox Watermark="Телефон"
+                     Width="250"
+                     Height="35"
+                     Text="{Binding Phone, Mode=TwoWay}"
+                     Classes="input" />
+
+            <TextBox Watermark="Пароль"
+                     Width="250"
+                     Height="35"
+                     Text="{Binding Password, Mode=TwoWay}"
+                     Classes="input" />
+
+            <TextBox Watermark="Должность"
+                     Width="250"
+                     Height="35"
+                     Text="{Binding Position, Mode=TwoWay}"
+                     Classes="input" />
+
+         
+            <Button Content="Сохранить"
+                    HorizontalAlignment="Center"
+                    Classes="pagesbnt"
+                    Command="{Binding SaveCommand}" />
+
+            <Button Content="Отмена"
+                    HorizontalAlignment="Center"
+                    Width="250"
+                    Classes="pagesbnt"
+                    Click="OnCancelClick" />
+        </StackPanel>
+    </Grid>
+</Window>

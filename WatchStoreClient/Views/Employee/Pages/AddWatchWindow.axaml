@@ -1,0 +1,99 @@
+<Window xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:WatchStoreClient.ViewModels.Employee.Pages"
+    x:Class="WatchStoreClient.Views.Employee.Pages.AddWatchWindow"
+    x:DataType="vm:AddWatchViewModel"
+    Title="Добавить новый товар"
+    Width="500" Height="800"
+    WindowStartupLocation="CenterOwner"
+    Background="#d2d3d6">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+      
+        <StackPanel Spacing="10">
+            <TextBox Watermark="Название модели"
+                     Text="{Binding Name, Mode=TwoWay}"
+                     Width="250"
+                     Height="35"
+                     Classes="input" />
+
+            <TextBox Watermark="Бренд"
+                     Text="{Binding Brand, Mode=TwoWay}"
+                     Width="250"
+                     Height="35"
+                     Classes="input" />
+
+            <TextBlock Text="Тип:" 
+                       FontSize="14" 
+                       Foreground="#0d1040" />
+            <TextBox Text="{Binding TypeId, Mode=TwoWay}" 
+                     Width="250" 
+                     Height="35" 
+                     Classes="input" />
+
+            <TextBlock Text="Цена:" 
+                       FontSize="14" 
+                       Foreground="#0d1040" />
+            <TextBox Text="{Binding Price, Mode=TwoWay}" 
+                     Width="250" 
+                     Height="35" 
+                     Classes="input" />
+
+            <TextBlock Text="Количество:" 
+                       FontSize="14" 
+                       Foreground="#0d1040" />
+            <TextBox Text="{Binding Quantity, Mode=TwoWay}" 
+                     Width="250" 
+                     Height="35" 
+                     Classes="input" />
+
+            <TextBox Watermark="Материал корпуса"
+                     Text="{Binding CaseMaterial, Mode=TwoWay}"
+                     Width="250"
+                     Height="35"
+                     Classes="input" />
+
+            <TextBox Watermark="Материал ремешка"
+                     Text="{Binding StrapMaterial, Mode=TwoWay}"
+                     Width="250"
+                     Height="35"
+                     Classes="input" />
+
+            <TextBox Watermark="Диаметр корпуса (мм)"
+                     Text="{Binding CaseDiameter, Mode=TwoWay}"
+                     Width="250"
+                     Height="35"
+                     Classes="input" />
+
+            <TextBox Watermark="Защита от воды (например, 5 ATM)"
+                     Text="{Binding WaterResistance, Mode=TwoWay}"
+                     Width="250"
+                     Height="35"
+                     Classes="input" />
+
+            <TextBlock Text="{Binding ErrorMessage}" 
+                       Foreground="Red" 
+                       TextWrapping="Wrap" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" 
+                    Grid.Row="1" 
+                    HorizontalAlignment="Center" 
+                    Spacing="10">
+            <Button Content="Добавить" 
+                    Width="100" 
+                    Command="{Binding AddWatchCommand}" 
+                    Classes="pagesbnt" />
+
+            <Button Content="Отмена" 
+                    Width="100" 
+                    Command="{Binding CancelCommand}" 
+                    Classes="pagesbnt" />
+        </StackPanel>
+    </Grid>
+</Window>

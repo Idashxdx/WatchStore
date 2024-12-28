@@ -1,0 +1,77 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:WatchStoreClient.ViewModels.Employee.Pages"
+    x:Class="WatchStoreClient.Views.Employee.Pages.EmployeeClientsView"
+    x:DataType="vm:EmployeeClientsViewModel">
+
+    <Grid RowDefinitions="Auto, *">
+        <StackPanel Orientation="Horizontal" Spacing="10" Margin="10" HorizontalAlignment="Center">
+            <TextBox Width="300"
+                Height="35"
+                Watermark="Введите имя..."
+                Text="{Binding SearchName}"
+                Classes="search"
+                VerticalAlignment="Center" />
+
+            <Button Content="Поиск"
+                Width="100"
+                Height="35"
+                Classes="pagesbnt"
+                Command="{Binding SearchCommand}" />
+
+            <Button Content="Обновить"
+                Width="100"
+                Height="35"
+                Classes="pagesbnt"
+                Command="{Binding RefreshCommand}" />
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" Margin="10" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Clients}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="#0d1040"
+                            BorderThickness="2"
+                            CornerRadius="10"
+                            Padding="10"
+                            Margin="10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Orientation="Vertical" Grid.Column="0">
+                                    <TextBlock Text="{Binding ClientName}"
+                                        FontWeight="Bold"
+                                        FontSize="18"
+                                        Foreground="#0d1040"
+                                        Margin="0,0,0,8" />
+
+                                    <TextBlock FontSize="14">
+                                        <Run Text="Email: "
+                                            Foreground="#0d1040"
+                                            FontWeight="Bold" />
+                                        <Run Text="{Binding ClientEmail}" />
+                                    </TextBlock>
+                                    <TextBlock FontSize="14">
+                                        <Run Text="Телефон: "
+                                            Foreground="#0d1040"
+                                            FontWeight="Bold" />
+                                        <Run Text="{Binding ClientPhone}" />
+                                    </TextBlock>
+                                    <TextBlock FontSize="14">
+                                        <Run Text="ID: "
+                                            Foreground="#0d1040"
+                                            FontWeight="Bold" />
+                                        <Run Text="{Binding ClientId}" />
+                                    </TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

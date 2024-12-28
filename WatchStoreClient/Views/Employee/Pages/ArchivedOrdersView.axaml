@@ -1,0 +1,37 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="WatchStoreClient.Views.Employee.Pages.ArchivedOrdersView"
+             x:DataType="pages:ArchivedOrdersViewModel"
+             xmlns:pages="clr-namespace:WatchStoreClient.ViewModels.Employee.Pages">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <TextBlock Text="Архив заказов" FontSize="20" FontWeight="Bold" Margin="5" />
+
+            <ToggleSwitch IsChecked="{Binding SortDescending}"
+                          Content="Сортировать по убыванию"
+                          Margin="5" />
+
+            <ListBox ItemsSource="{Binding Orders}" Margin="5">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1"
+                                BorderBrush="Gray"
+                                Margin="5"
+                                Padding="10"
+                                CornerRadius="5">
+                            <StackPanel>
+                                <TextBlock Text="{Binding ClientName, StringFormat=Клиент: {0}}" />
+                                <TextBlock Text="{Binding WatchName, StringFormat=Часы: {0}}" />
+                                <TextBlock Text="{Binding Brand, StringFormat=Бренд: {0}}" />
+                                <TextBlock Text="{Binding Quantity, StringFormat=Количество: {0}}" />
+                                <TextBlock Text="{Binding DeliveryAddress, StringFormat=Адрес: {0}}" />
+                                <TextBlock Text="{Binding ArchivedDate, StringFormat=Дата архивации: {0:dd.MM.yyyy}}" />
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

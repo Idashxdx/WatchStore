@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="WatchStoreClient.Views.RegisterWindow"
+        x:DataType="vm:RegisterWindowViewModel"
+        xmlns:vm="clr-namespace:WatchStoreClient.ViewModels"
+        Width="400" Height="400"
+        Title="Регистрация"
+        WindowStartupLocation="CenterScreen"  Background="#d2d3d6">
+    
+    <Grid>
+        <StackPanel   VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+            <TextBlock Text="Регистрация" FontWeight="Bold"
+            FontSize="18" Foreground="#0d1040" HorizontalAlignment="Center" />
+
+            <TextBox Watermark="Имя" Width="250" Text="{Binding Name}" Classes="input" />
+            <TextBox Watermark="Email" Width="250" Text="{Binding Email}"  Classes="input"/>
+            <TextBox Watermark="Телефон" Width="250" Text="{Binding Phone}" Classes="input" />
+            <TextBox Watermark="Пароль" Width="250" PasswordChar="●" Text="{Binding Password}" Classes="input"/>
+
+            <Button Content="Зарегистрироваться" HorizontalAlignment="Center" Classes="primary"
+                        VerticalContentAlignment="Center" Width="250" Command="{Binding RegisterCommand}" />
+
+            <TextBlock Text="{Binding StatusMessage}" Foreground="Red"
+                       HorizontalAlignment="Center" TextWrapping="Wrap" />
+        </StackPanel>
+    </Grid>
+</Window>
+ 

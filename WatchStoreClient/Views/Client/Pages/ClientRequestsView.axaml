@@ -1,0 +1,109 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="WatchStoreClient.Views.Client.Pages.ClientRequestsView"
+    x:DataType="pages:ClientRequestsViewModel"
+    xmlns:pages="clr-namespace:WatchStoreClient.ViewModels.Client.Pages">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+            Text="{Binding ErrorMessage}"
+            Foreground="Red"
+            TextWrapping="Wrap"
+            Margin="10" />
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="10">
+            <ItemsControl ItemsSource="{Binding Requests}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="#0d1040"
+                            BorderThickness="2"
+                            CornerRadius="10"
+                            Margin="10"
+                            Padding="10">
+                            <StackPanel Orientation="Vertical" Spacing="10">
+                                <StackPanel Orientation="Horizontal" Spacing="15">
+                                    <StackPanel Orientation="Vertical" MinWidth="200">
+                                        <TextBlock Text="Описание:"
+                                            FontWeight="Bold"
+                                            Foreground="Gray" />
+                                        <TextBlock Text="{Binding Description}"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            TextWrapping="Wrap"
+                                            Foreground="#0d1040" />
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Vertical" MinWidth="200">
+                                        <TextBlock Text="Тип заявки:"
+                                            FontWeight="Bold"
+                                            Foreground="Gray" />
+                                        <TextBlock Text="{Binding RequestType}"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Foreground="#0d1040" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Spacing="15">
+                                    <StackPanel Orientation="Vertical" MinWidth="200">
+                                        <TextBlock Text="Статус:"
+                                            FontWeight="Bold"
+                                            Foreground="Gray" />
+                                        <TextBlock Text="{Binding Status}"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Foreground="#0d1040" />
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Vertical" MinWidth="200">
+                                        <TextBlock>
+                                            <Run Text="Создана: " FontWeight="Bold"
+                                                Foreground="Gray" />
+                                            <Run
+                                                Text="{Binding CreationDate, StringFormat=dd.MM.yyyy}" />
+                                        </TextBlock>
+
+                            
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Spacing="15">
+                                    <StackPanel Orientation="Vertical" MinWidth="200">
+                                        <TextBlock Text="Целевые часы:"
+                                            FontWeight="Bold"
+                                            Foreground="Gray" />
+                                        <TextBlock Text="{Binding TargetWatchName}"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Foreground="#0d1040" />
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Vertical" MinWidth="200">
+                                        <TextBlock Text="Бренд:"
+                                            FontWeight="Bold"
+                                            Foreground="Gray" />
+                                        <TextBlock Text="{Binding TargetBrand}"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Foreground="#0d1040" />
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Vertical" MinWidth="200">
+                                        <TextBlock>
+                                            <Run Text="Бюджет: " FontWeight="Bold" Foreground="Gray" />
+                                            <Run Text="{Binding TargetPriceRange, StringFormat=C}" />
+                                        </TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

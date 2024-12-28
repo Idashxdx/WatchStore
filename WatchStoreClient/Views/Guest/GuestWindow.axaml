@@ -1,0 +1,62 @@
+<Window xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:WatchStoreClient.ViewModels.Guest"
+    xmlns:pages="clr-namespace:WatchStoreClient.ViewModels.Guest.Pages"
+    xmlns:views="clr-namespace:WatchStoreClient.Views.Guest.Pages"
+    x:Class="WatchStoreClient.Views.Guest.GuestWindow"
+    x:DataType="vm:GuestWindowViewModel"
+    Width="1000" Height="800"
+    WindowStartupLocation="CenterScreen"
+    Title="Режим гостя">
+    <Window.DataTemplates>
+        <DataTemplate DataType="{x:Type pages:GuestWatchesViewModel}">
+            <views:GuestWatchesView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type pages:GuestRequestViewModel}">
+            <views:GuestRequestView />
+        </DataTemplate>
+    </Window.DataTemplates>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="White" Grid.Column="0" HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+            <TextBlock Text="WatchStore" FontSize="20" FontWeight="Bold" Foreground="#0d1040"
+                HorizontalAlignment="Center" Margin="0,20,0,10" />
+            <Button Command="{Binding ShowWatchesCommand}" Classes="menu-button">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="avares://WatchStoreClient/Assets/watch-icon.png" Width="20"
+                        Height="20" Margin="0,0,5,0" />
+                    <TextBlock Text="Часы" />
+                </StackPanel>
+            </Button>
+            <StackPanel VerticalAlignment="Stretch" Orientation="Vertical">
+
+
+                <Button Command="{Binding ShowRequestCommand}" Classes="menu-button">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="avares://WatchStoreClient/Assets/request-icon.png" Width="20"
+                            Height="20" Margin="0,0,5,0" />
+                        <TextBlock Text="Заявка" />
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+
+            <Button Command="{Binding LogoutCommand}" Classes="menu-button"
+                HorizontalAlignment="Center" Margin="0,20" VerticalAlignment="Bottom">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="avares://WatchStoreClient/Assets/exit-icon.png" Width="20"
+                        Height="20" Margin="0,0,5,0" />
+                    <TextBlock Text="Выход" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <ContentControl Grid.Column="1" Margin="10" Content="{Binding CurrentView}" />
+    </Grid>
+</Window>

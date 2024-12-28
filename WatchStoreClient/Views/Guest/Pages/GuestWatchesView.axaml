@@ -1,0 +1,98 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="WatchStoreClient.Views.Guest.Pages.GuestWatchesView"
+             x:DataType="pages:GuestWatchesViewModel"
+             xmlns:pages="clr-namespace:WatchStoreClient.ViewModels.Guest.Pages">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+       <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center" Margin="0,10" Grid.Row="0">
+            <TextBox Watermark="Поиск по названию..."
+                     Text="{Binding FilterText, Mode=TwoWay}"
+                     Classes="search"
+                     VerticalAlignment="Center" />
+
+           <ComboBox Width="350"
+                      Height="35"
+                      VerticalAlignment="Center"
+                      ItemsSource="{Binding SortOptions}"
+                      SelectedItem="{Binding SelectedSortOption}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding Watches}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="#0d1040"
+                                    BorderThickness="2"
+                                    Margin="5"
+                                    CornerRadius="10"
+                                    Padding="10">
+                                <Grid ColumnDefinitions="150,*" Margin="5">
+                                    <Image Source="{Binding ImagePreview}"
+                                           Width="150"
+                                           Height="150"
+                                           Stretch="Uniform"
+                                           Grid.Column="0" />
+                                   <StackPanel Grid.Column="1" Margin="10,0,0,0" Spacing="5">
+
+                                        <TextBlock Text="{Binding ModelName}"
+                                                   FontWeight="Bold"
+                                                   FontSize="18"
+                                                   Margin="0,0,0,8"
+                                                   Foreground="#0d1040" />
+    <TextBlock Text="{Binding Brand}"
+                                                   FontStyle="Italic"
+                                                   FontSize="16"
+                                                   Foreground="Gray" />
+
+                                       <TextBlock FontSize="16">
+                                            <Run Text="Цена: "
+                                                 Foreground="#0d1040"
+                                                 FontWeight="Bold"/>
+                                            <Run Text="{Binding Price, StringFormat='{}{0:C}'}" />
+                                        </TextBlock>
+
+                                        <TextBlock FontSize="14">
+                                            <Run Text="Материал корпуса: "
+                                                 Foreground="Gray" />
+                                            <Run Text="{Binding CaseMaterial}" />
+                                        </TextBlock>
+
+                                       <TextBlock FontSize="14">
+                                            <Run Text="Материал ремешка: "
+                                                 Foreground="Gray" />
+                                            <Run Text="{Binding StrapMaterial}" />
+                                        </TextBlock>
+
+                                        <TextBlock FontSize="14">
+                                            <Run Text="Диаметр: "
+                                                 Foreground="Gray" />
+                                            <Run Text="{Binding CaseDiameter, StringFormat='{}{0:0.0} мм'}" />
+                                        </TextBlock>
+
+                                        <TextBlock FontSize="14">
+                                            <Run Text="Водозащита: "
+                                                 Foreground="Gray" />
+                                            <Run Text="{Binding WaterResistance}" />
+                                        </TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
